@@ -18,6 +18,7 @@ class Solver(JuliaSolver):
     # Config of the solver
     name = 'Julia-AJD'
     stop_strategy = 'iteration'
+    julia_requirements = ['Diagonalizations', 'LinearAlgebra', 'PosDefManifold']
 
     def skip(self, C):
         return False, "Not Implemented"
