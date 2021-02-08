@@ -3,12 +3,12 @@ name: build
 on:
   create:
     branches:
-      - 'master'
+      - main
     tags:
       - '**'
   pull_request:
     branches:
-      - master
+      - main
 
 jobs:
   build-linux:
