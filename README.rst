@@ -40,7 +40,7 @@ try installing the development version of `benchopt`:
   $ pip install -U git+https://github.com/benchopt/benchopt
 
 
-.. |Build Status| image:: https://github.com/benchopt/benchmark_jointdiag/workflows/build/badge.svg
+.. |Build Status| image:: https://github.com/benchopt/benchmark_jointdiag/workflows/Tests/badge.svg
    :target: https://github.com/benchopt/benchmark_jointdiag/actions
 .. |Python 3.6+| image:: https://img.shields.io/badge/python-3.6%2B-blue
    :target: https://www.python.org/downloads/release/python-360/

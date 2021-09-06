@@ -11,7 +11,8 @@ class Solver(BaseSolver):
 
     install_cmd = 'conda'
     requirements = [
-        'pip:https://api.github.com/repos/pierreablin/qndiag/master']
+        'pip:git+https://github.com/pierreablin/qndiag@master'
+    ]
 
     def set_objective(self, C):
         self.C = C
