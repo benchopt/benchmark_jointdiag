@@ -14,8 +14,14 @@ class Solver(BaseSolver):
         'pip:git+https://github.com/pierreablin/qndiag@master'
     ]
 
-    def set_objective(self, C):
+    def set_objective(self, C, ortho):
         self.C = C
+        self.ortho = ortho
+
+    def skip(self, C, ortho):
+        if ortho:
+            return True, "Pham does not support orthogonal constraint."
+        return False, None
 
     def run(self, n_iter):
         self.B, _ = ajd_pham(self.C, max_iter=n_iter)
