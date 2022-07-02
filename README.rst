@@ -8,12 +8,12 @@ reproducible the comparisons of optimization algorithms.
 The Approximate Joint Diagonalization (AJD) consists in solving
 the following program:
 
-.. math::
+$$
+\\min_B \\frac{1}{n} \\sum_{i=1}^n \\left[ \\log |\textrm{diag} (B C^i B^\top) | \\right]
+$$
 
-    \min_B \frac{1}{2n} \sum_{i=1}^n \left[ \log |\mathrm{diag}(B C^i B^\top)| - \log |B C^i B^\top| \right]
-
-where the C^i are n square matrices, $|\cdot|$ stands for the
-matric determinant.
+where the C^i are n square matrices, $|\\cdot|$ stands for the
+matrix determinant.
 
 Install
 --------
