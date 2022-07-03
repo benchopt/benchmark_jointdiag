@@ -24,4 +24,4 @@ class Dataset(BaseDataset):
         diagonals = rng.uniform(size=(self.n_matrices, self.n_features))
         A = rng.randn(self.n_features, self.n_features)  # mixing matrix
         C = (A[None, :, :] * diagonals[:, None, :]) @ A.T  # dataset
-        return dict(C=C)
+        return dict(C=C, A=A)
