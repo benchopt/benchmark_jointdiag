@@ -5,15 +5,17 @@ Benchmark repository for Approximate Joint Diagonalization
 
 BenchOpt is a package to simplify and make more transparent and
 reproducible the comparisons of optimization algorithms.
-The Approximate Joint Diagonalization (AJD) consists in solving
-the following program:
+This benchmark considers the approximate joint diagonalization (AJD)
+of positive matrices. Given n square symmetric positive matrices $C^i$,
+it consists of solving the following problem:
 
-.. math::
+$$
+\\min_B \\frac{1}{2n} \\sum_{i=1}^n \\log |\\textrm{diag} (B C^i B^{\\top}) | - \\log | B C^i B^{\\top} |
+$$
 
-    \min_B \frac{1}{2n} \sum_{i=1}^n \left[ \log |\mathrm{diag}(B C^i B^\top)| - \log |B C^i B^\top| \right]
-
-where the C^i are n square matrices, $|\cdot|$ stands for the
-matric determinant.
+where | | stands for the matrix determinant and $\\textrm{diag}$ stands
+for the operator that keeps only the diagonal elements of a matrix. Optionaly, the
+matrix $B$ can be enforced to be orhogonal.
 
 Install
 --------
