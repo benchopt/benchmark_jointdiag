@@ -11,10 +11,11 @@ class Dataset(BaseDataset):
 
     parameters = {
         'n_matrices, n_features, noise_level': [
-            (100, 5, 0), (100, 5, 0.1)],  # slow to simulate big correlated design
+            (100, 5, 0), (100, 5, 0.1)]
     }
 
-    def __init__(self, n_matrices=10, n_features=5, noise_level=0, random_state=27):
+    def __init__(self, n_matrices=10, n_features=5, noise_level=0,
+                 random_state=27):
         self.n_matrices = n_matrices
         self.n_features = n_features
         self.noise_level = noise_level
@@ -25,7 +26,8 @@ class Dataset(BaseDataset):
         diagonals = rng.uniform(size=(self.n_matrices, self.n_features))
         A = rng.randn(self.n_features, self.n_features)  # mixing matrix
         C = (A[None, :, :] * diagonals[:, None, :]) @ A.T  # clean dataset
-        N = self.noise_level * rng.randn(self.n_matrices, self.n_features, self.n_features)
+        N = self.noise_level * rng.randn(self.n_matrices, self.n_features,
+                                         self.n_features)
         N = [x @ x.T for x in N]  # create random psd matrices
         C += N
         return dict(C=C, A=A)
