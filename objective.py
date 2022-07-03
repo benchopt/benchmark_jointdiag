@@ -57,7 +57,7 @@ class Objective(BaseObjective):
         for Di in D:
             nll -= np.linalg.slogdet(Di)[1]
         nll /= 2 * n_matrices
-        obj = np.exp(nll)  # take exp for stopping criterion to work better
+        obj = max(nll, 0)  # can be < 0 because of numerical errors
         return {
             'value': obj,
             'NLL': nll,  # negative log-likelihood
