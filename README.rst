@@ -15,7 +15,7 @@ $$
 
 where | | stands for the matrix determinant and $\\textrm{diag}$ stands
 for the operator that keeps only the diagonal elements of a matrix. Optionaly, the
-matrix $B$ can be enforced to be orhogonal.
+matrix $B$ can be enforced to be orthogonal.
 
 Install
 --------
