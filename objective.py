@@ -57,10 +57,8 @@ class Objective(BaseObjective):
         for Di in D:
             nll -= np.linalg.slogdet(Di)[1]
         nll /= 2 * n_matrices
-        obj = np.exp(nll)  # take exp for stopping criterion to work better
         return {
-            'value': obj,
-            'NLL': nll,  # negative log-likelihood
+            'value': nll,  # negative log-likelihood
             'Amari distance': amari_distance(B, self.A)
         }
 

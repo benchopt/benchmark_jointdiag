@@ -11,7 +11,7 @@ class Dataset(BaseDataset):
 
     parameters = {
         'n_matrices, n_features, noise_level': [
-            (100, 5, 0), (100, 5, 0.1)]
+            (100, 5, 0.01), (100, 5, 0.1)]
     }
 
     def __init__(self, n_matrices=10, n_features=5, noise_level=0,
@@ -28,6 +28,7 @@ class Dataset(BaseDataset):
         C = (A[None, :, :] * diagonals[:, None, :]) @ A.T  # clean dataset
         N = self.noise_level * rng.randn(self.n_matrices, self.n_features,
                                          self.n_features)
-        N = [x @ x.T for x in N]  # create random psd matrices
+        # create random psd matrices and add them to C
+        N = N @ np.transpose(N, axes=(0, 2, 1))
         C += N
         return dict(C=C, A=A)
