@@ -28,6 +28,7 @@ def amari_distance(W, A):
 
 
 class Objective(BaseObjective):
+    min_benchopt_version = "1.3"
     name = "Joint Diagonalization"
 
     parameters = {
@@ -62,5 +63,5 @@ class Objective(BaseObjective):
             'Amari distance': amari_distance(B, self.A)
         }
 
-    def to_dict(self):
+    def get_objective(self):
         return dict(C=self.C, ortho=self.ortho)
