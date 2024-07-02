@@ -28,7 +28,7 @@ def amari_distance(W, A):
 
 
 class Objective(BaseObjective):
-    min_benchopt_version = "1.3"
+    min_benchopt_version = "1.5"
     name = "Joint Diagonalization"
 
     parameters = {
@@ -42,10 +42,10 @@ class Objective(BaseObjective):
         self.C = C
         self.A = A
 
-    def get_one_solution(self):
+    def get_one_result(self):
         return np.eye((self.C.shape[1]))
 
-    def compute(self, B):
+    def evaluate_result(self, B):
         if self.ortho:
             is_ortho = np.linalg.norm(
                 B @ B.T - np.eye(len(B)), ord=np.inf) < 1e-6
