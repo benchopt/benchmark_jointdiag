@@ -10,7 +10,7 @@ of positive matrices. Given n square symmetric positive matrices $C^i$,
 it consists of solving the following problem:
 
 $$
-\\min_B \\frac{1}{2n} \\sum_{i=1}^n \\log |\\textrm{diag} (B C^i B^{\\top}) | - \\log | B C^i B^{\\top} |
+\\min_B \\frac{1}{2n} \\sum_{i=1}^n \\log | \\textrm{diag} (B C^i B^{\\top}) | - \\log | B C^i B^{\\top} |
 $$
 
 where | | stands for the matrix determinant and $\\textrm{diag}$ stands
