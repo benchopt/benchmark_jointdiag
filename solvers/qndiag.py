@@ -95,4 +95,4 @@ class Solver(BaseSolver):
         self.B = B
 
     def get_result(self):
-        return self.B
+        return dict(B=self.B)

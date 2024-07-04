@@ -6,7 +6,7 @@ Benchmark repository for Approximate Joint Diagonalization
 BenchOpt is a package to simplify and make more transparent and
 reproducible the comparisons of optimization algorithms.
 This benchmark considers the approximate joint diagonalization (AJD)
-of positive matrices. Given n square symmetric positive matrices $C^i$,
+of positive matrices. Given $n$ square symmetric positive matrices $C^i$,
 it consists of solving the following problem:
 
 $$
