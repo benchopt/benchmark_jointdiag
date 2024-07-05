@@ -19,7 +19,7 @@ def loss_proxy(C, B):
 
 class Solver(BaseSolver):
     name = "qndiag"
-    stopping_strategy = "callback"
+    sampling_strategy = "callback"
 
     references = [
         "P. Ablin, J.F. Cardoso and A. Gramfort. Beyond Pham's algorithm"
@@ -67,9 +67,10 @@ class Solver(BaseSolver):
             Bu, _, Bv = np.linalg.svd(B)
             B = Bu @ Bv.T
 
+        self.B = B
         obj = loss_proxy(C, B)
 
-        while callback(B):
+        while callback():
             # Gradient
             D = B @ C @ B.T  # diagonalization with B
             diags = np.diagonal(D, axis1=1, axis2=2)
@@ -95,4 +96,4 @@ class Solver(BaseSolver):
         self.B = B
 
     def get_result(self):
-        return self.B
+        return dict(B=self.B)

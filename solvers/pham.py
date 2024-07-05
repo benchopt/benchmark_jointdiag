@@ -27,4 +27,4 @@ class Solver(BaseSolver):
         self.B, _ = ajd_pham(self.C, max_iter=n_iter)
 
     def get_result(self):
-        return self.B
+        return dict(B=self.B)
