@@ -2,11 +2,11 @@ from benchopt import BaseSolver
 from benchopt import safe_import_context
 
 with safe_import_context() as import_ctx:
-    from pyriemann.utils.ajd import ajd_pham
+    from pyriemann.utils.ajd import uwedge
 
 
 class Solver(BaseSolver):
-    name = "Pham"
+    name = "U-WEDGE"
 
     install_cmd = 'conda'
     requirements = ['pyriemann']
@@ -17,11 +17,11 @@ class Solver(BaseSolver):
 
     def skip(self, C, ortho):
         if ortho:
-            return True, "Pham does not support orthogonal constraint."
+            return True, "U-WEDGE does not support orthogonal constraint."
         return False, None
 
     def run(self, n_iter):
-        self.B, _ = ajd_pham(self.C, n_iter_max=n_iter)
+        self.B, _ = uwedge(self.C, n_iter_max=n_iter)
 
     def get_result(self):
         return dict(B=self.B)
