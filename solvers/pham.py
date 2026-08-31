@@ -2,7 +2,11 @@ from benchopt import BaseSolver
 from benchopt import safe_import_context
 
 with safe_import_context() as import_ctx:
-    from pyriemann.utils.ajd import ajd_pham
+    import pyriemann
+    if pyriemann.__version__ < "0.13":
+        from pyriemann.utils.ajd import ajd_pham
+    else:
+        from pyriemann.geometry.ajd import ajd_pham
 
 
 class Solver(BaseSolver):

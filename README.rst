@@ -29,7 +29,8 @@ This benchmark can be run using the following commands:
    $ benchopt run ./benchmark_jointdiag
 
 
-Use `benchopt run -h` for more details about these options, or visit https://benchopt.github.io/api.html.
+Use `benchopt run -h` for more details about these options,
+or visit https://benchopt.github.io/stable/user_guide/API_ref.html.
 
 Troubleshooting
 ---------------

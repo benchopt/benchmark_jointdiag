@@ -20,6 +20,7 @@ class Dataset(BaseDataset):
         self.n_features = n_features
         self.noise_level = noise_level
         self.random_state = random_state
+        self._used_seed = None
 
     def get_data(self):
         rng = np.random.RandomState(self.random_state)

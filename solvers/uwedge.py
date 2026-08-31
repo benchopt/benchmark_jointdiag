@@ -2,7 +2,11 @@ from benchopt import BaseSolver
 from benchopt import safe_import_context
 
 with safe_import_context() as import_ctx:
-    from pyriemann.utils.ajd import uwedge
+    import pyriemann
+    if pyriemann.__version__ < "0.13":
+        from pyriemann.utils.ajd import uwedge
+    else:
+        from pyriemann.geometry.ajd import uwedge
 
 
 class Solver(BaseSolver):
